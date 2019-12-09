@@ -62,20 +62,27 @@
 		<link href="https://getbootstrap.com/docs/4.4/examples/sign-in/signin.css" rel="stylesheet">
 	</head>
 	<body class="text-center">
-		<form class="form-signin-custom">
+		<form class="form-signin-custom" action = "/" method = "POST">
 			<img class="mb-4 image" src="/static/bay_logo.jpg" alt="" width="90" height="90">
 			
 			<h1 class="h3 mb-3 font-weight-normal">Shop Sale Details</h1>
+
+			<div style="margin: 1em;">
+				Input Date:
+				<input type="number" name="year" id="year" placeholder="Year" maxlength="5"> -
+				<input type="number" name="month" id="month" placeholder="Month" min="1" max="12"> -
+				<input type="number" name="day" id="day" placeholder="Day" min="1" max="31">
+			</div>
 
 			<!-- <label for="inputEmail" class="sr-only">Email address</label>
 			<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
 			<label for="inputPassword" class="sr-only">Password</label>
 			<input type="password" id="inputPassword" class="form-control" placeholder="Password" required> -->
 			
-			<textarea id="shop_sale_details" class="form-control" placeholder="Input Shop Sale Data" required autofocus rows='10' cols= '100'></textarea>
+			<textarea name="shop_sale_details" id="shop_sale_details" class="form-control" placeholder="Input Shop Sale Data" required autofocus rows='10' cols= '100'></textarea>
 			<div class="checkbox mb-3" style="margin-top: 1em;">
 				<label>
-					Please input data without the " (quotation marks)
+					Please input data without the " (quotation marks) {{message}}
 				</label>
 			</div>
 			<button class="btn btn-lg btn-primary btn-block" type="submit">Convert</button>
