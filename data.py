@@ -13,10 +13,15 @@ user_id = 0
 qty = 0
 shop_name = ''
 date = ''
+grand_total = 0.00
 
 for var in jdata:
 
     data = var['data']
+
+    amount_total = data['amount_total']
+    grand_total += amount_total
+    print(amount_total)
     
     creation_date = data['creation_date']
     dt = parse(creation_date)
@@ -42,6 +47,8 @@ for var in jdata:
         print(user_id)
         print(qty)
         print(shop_name)
+print(grand_total)
+# row_list.append(['GRAND TOTAL', '', '', '', grand_total])
 
 filename = shop_name+'.csv'
 
