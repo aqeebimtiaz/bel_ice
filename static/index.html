@@ -6,11 +6,13 @@
 		<meta name="description" content="A JSON to CSV converter which takes BEL POS sales data stored as JSON in browser's local storage & convert that to CSV.">
 		<meta name="author" content="Aqeeb Imtiaz Harun">
 		<meta name="generator" content="Jekyll v3.8.6">
+		<link rel="manifest" href="/static/manifest.json">
 		<title>BEL ICE</title>
 
 		<!-- <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/sign-in/"> -->
 		<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<!-- Bootstrap core CSS -->
 		<link href="https://getbootstrap.com/docs/4.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
@@ -61,6 +63,11 @@
 				margin: auto;
 			}
 
+			.form--button-submit{
+				background-color: #50fa7b !important;
+				border-color: #50fa7b;
+			}
+
 			@media (min-width: 768px) {
 				.bd-placeholder-img-lg {
 				font-size: 3.5rem;
@@ -98,7 +105,10 @@
 					Please input data without the " (quotation marks)
 				</label>
 			</div>
-			<button class="btn btn-lg btn-primary btn-block" type="submit">Convert</button>
+			<button class="btn btn-lg btn-block form--button-submit" type="submit">
+				<i class="material-icons">save_alt</i>
+				Convert
+			</button>
 			<div class="mt-5 text-muted">&copy; Bay Emporium Ltd.</div>
 		</form>
 
