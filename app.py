@@ -26,7 +26,7 @@ def index():
         filename = processedData['filename']
         row_list = processedData['data']
 
-        contentDisposition = "attachment; filename=export.csv"
+        contentDisposition = "attachment; filename="+filename
 
         si = io.StringIO()
         writer =  csv.writer(si, dialect='excel')

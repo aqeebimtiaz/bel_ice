@@ -22,7 +22,7 @@ for var in jdata:
     amount_total = data['amount_total']
     grand_total += amount_total
     print(amount_total)
-    
+
     creation_date = data['creation_date']
     dt = parse(creation_date)
     date = dt.date()
@@ -31,7 +31,7 @@ for var in jdata:
         lists = data['lines']
         user_id = data['user_id']
         shop_name = data['location_id'][1]
-            
+
         for item in lists:
             qty = item[2]['qty']
             product_id = item[2]['product_id']
@@ -39,7 +39,7 @@ for var in jdata:
             pack_lot_ids = item[2]['pack_lot_ids']
             for pack_lot_id in pack_lot_ids:
                 barcode = pack_lot_id[2]['lot_name']
-            
+
         row_list.append([shop_name, barcode, product_id, user_id, qty])
 
         print(product_id)
