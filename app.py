@@ -47,6 +47,25 @@ def ice():
 def ice2():
     if request.method=="GET":
         return app.send_static_file('ice.html')
+    elif request.method=="POST":
+        result = request.form['shop_sale_details']
+        processedData = helpers.processData2(result)
+
+        print (result)
+
+        filename = processedData['filename']
+        row_list = processedData['data']
+
+        contentDisposition = "attachment; filename="+filename
+
+        si = io.StringIO()
+        writer =  csv.writer(si, dialect='excel')
+        writer.writerows(row_list)
+
+        output = make_response(si.getvalue())
+        output.headers["Content-Disposition"] = contentDisposition
+        output.headers["Content-type"] = "text/csv"
+        return output
 
 
 def createCSV(file_name, row_list):

@@ -58,3 +58,27 @@ def processData(string, inputDate):
     filename = shop_name+'.csv'
 
     return {'filename': filename, 'data': row_list}
+
+def processData2(string):
+    shop_name = "SalesData"
+
+    jdata = json.loads(string)
+
+    row_list = [["Date", "Invoice No.", "Amount", "Barcodes"]]
+
+    invoice_date = 0
+    invoice = ''
+    amount = 0
+    barcodes = ''
+
+    for var in jdata:
+        invoice_date = var['inv_date']
+        invoice = var['inv_no']
+        amount = var['amount']
+        barcodes = var['barcodes']
+
+        row_list.append([invoice_date, invoice, amount, barcodes])
+
+    filename = shop_name+'.csv'
+
+    return {'filename': filename, 'data': row_list}

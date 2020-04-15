@@ -28,7 +28,7 @@
 			body{
 				font-family: 'Poppins', sans-serif;
 				background-color: #cccccc;
-  				background-image: linear-gradient(#fff, #ff3333);
+  				background-image: linear-gradient(#fff 30%, #ce6c56 50%, #ff3333);
 				background-position: center;
 				background-repeat: no-repeat;
 				background-size: cover;
@@ -80,7 +80,8 @@
 		<script defer src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	</head>
 	<body class="text-center">
-		<form class="form-signin-custom" action = "/" method = "POST">
+		<div class="header"><a href="/">Home</a> <a href="/ice-new">New Converter</a></div>
+		<form class="form-signin-custom" action="/ice-new" id="saleForm" method = "POST">
 			<img class="mb-4 image" src="/static/bay_logo.jpg" alt="" width="90" height="90">
 
 			<h1 class="h3 mb-3 font-weight-normal" id="app">{{ message }}</h1>
@@ -95,13 +96,16 @@
 			<textarea name="shop_sale_details" id="shop_sale_details" class="form-control" placeholder="Input Shop Sale Data" required autofocus rows='10' cols= '100'></textarea>
 			<div class="checkbox mb-3" style="margin-top: 1em;">
 				<label>
-					Please input data without the " (quotation marks)
+					Please input data without the "" (quotation marks)
 				</label>
 			</div>
-			<button class="btn btn-lg btn-primary btn-block" type="submit">Convert</button>
+			<button class="btn btn-lg btn-primary btn-block" type="submit" id="convertSalesBtn">Convert</button>
 			<div class="mt-5 text-muted">&copy; Bay Emporium Ltd.</div>
 		</form>
+		<!-- <a id="exportsags" download="" style="width: 1rem; height: 1rem;">Download</a> -->
 
 		<script defer src="/static/custom_vue.js"></script>
+		<script defer src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+		<!-- <script defer src="/static/1.js"></script> -->
 	</body>
 </html>
